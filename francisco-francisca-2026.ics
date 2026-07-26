@@ -1,0 +1,27 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//Francisco y Francisca//Invitacion de matrimonio//ES
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+X-WR-CALNAME:Boda Francisco y Francisca
+BEGIN:VEVENT
+UID:francisco-francisca-ceremonia-20261121@franciscorobledo.github.io
+DTSTAMP:20260726T000000Z
+DTSTART;VALUE=DATE:20261121
+DTEND;VALUE=DATE:20261122
+SUMMARY:Ceremonia — Francisco y Francisca
+LOCATION:Iglesia Santa Ursula\, Av. Nueva Costanera 4190\, Vitacura
+DESCRIPTION:Ceremonia religiosa de Francisco y Francisca.\nAv. Nueva Costanera 4190\, Vitacura.
+URL:https://franciscorobledo.github.io/matrimonio-franes/
+END:VEVENT
+BEGIN:VEVENT
+UID:francisco-francisca-recepcion-20261121@franciscorobledo.github.io
+DTSTAMP:20260726T000000Z
+DTSTART;VALUE=DATE:20261121
+DTEND;VALUE=DATE:20261122
+SUMMARY:Recepción — Francisco y Francisca
+LOCATION:Los Ingleses de Chicureo\, Av. Chicureo 1700\, Chicureo\, Colina
+DESCRIPTION:Recepción de Francisco y Francisca.\nAv. Chicureo 1700\, Chicureo\, Colina.
+URL:https://franciscorobledo.github.io/matrimonio-franes/
+END:VEVENT
+END:VCALENDAR
