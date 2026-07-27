@@ -89,15 +89,34 @@ transition:opacity .7s ease,visibility .7s ease;
 }
 .opening-overlay.hidden{opacity:0;visibility:hidden;pointer-events:none;}
 .opening-card{
-width:min(92vw,420px);padding:1.6rem 1.2rem;border-radius:24px;
+width:min(92vw,560px);padding:0;border-radius:24px;
 background:transparent;box-shadow:none;
-text-align:center;animation:openingPop .6s ease both;
+text-align:center;animation:openingPop .8s ease both;
+position:relative;
 }
-.opening-card img{width:100%;max-width:320px;margin:0 auto 1rem;border-radius:16px;object-fit:cover;}
-.opening-title{font-family:var(--font-script);font-size:2rem;color:var(--burgundy);margin-bottom:.5rem;}
-.opening-text{font-family:var(--font-serif);font-size:1rem;color:var(--text-soft);line-height:1.7;}
-.opening-hint{font-family:var(--font-label);font-size:.7rem;letter-spacing:.28em;text-transform:uppercase;color:var(--gold-deep);margin-top:.8rem;}
-@keyframes openingPop{from{transform:scale(.96);opacity:0;}to{transform:scale(1);opacity:1;}}
+.opening-card::before{
+content:"";position:absolute;inset:-18px;border-radius:30px;
+border:1px solid rgba(255,232,171,.7);
+box-shadow:0 0 0 2px rgba(111,73,39,.18),0 0 40px rgba(255,214,120,.22),inset 0 0 28px rgba(255,255,255,.16),0 0 60px rgba(0,0,0,.18);
+pointer-events:none;
+}
+.opening-card::after{
+content:"";position:absolute;inset:-2px;border-radius:26px;
+background:linear-gradient(120deg, transparent 0%, rgba(255,255,255,.22) 42%, transparent 78%);
+transform:translateX(-130%);animation:openingShimmer 2.2s ease-in-out infinite;
+pointer-events:none;
+}
+.opening-card img{
+width:100%;max-width:520px;margin:0 auto;
+border-radius:20px;object-fit:cover;
+box-shadow:0 35px 85px rgba(0,0,0,.38),0 0 24px rgba(255,208,113,.16),inset 0 0 20px rgba(255,255,255,.08);
+transform:perspective(900px) rotate(-1.2deg) translateY(-6px);
+animation:openingFloat 2.8s ease-in-out infinite alternate;
+filter:contrast(1.04) saturate(1.02) sepia(.08);
+}
+@keyframes openingPop{from{transform:scale(.94);opacity:0;}to{transform:scale(1);opacity:1;}}
+@keyframes openingFloat{from{transform:perspective(900px) rotate(-1.2deg) translateY(-6px);}to{transform:perspective(900px) rotate(1.3deg) translateY(4px);}}
+@keyframes openingShimmer{0%{transform:translateX(-120%);}100%{transform:translateX(120%);}}
 
 /* ===== 3. LOADER ===== */
 #loader{
@@ -398,9 +417,6 @@ body{background:radial-gradient(ellipse at 18% 4%,rgba(255,255,255,.88),transpar
 <div id="openingOverlay" class="opening-overlay" role="dialog" aria-label="Abrir invitación">
   <div class="opening-card">
     <img src="carta_harry.png" alt="Carta de invitación" />
-    <h2 class="opening-title">Haz clic</h2>
-    <p class="opening-text">La invitación se abrirá automáticamente en 3 segundos.</p>
-    <p class="opening-hint">O toca la pantalla para entrar</p>
   </div>
 </div>
 
@@ -621,7 +637,7 @@ revealed=true;
 overlay.classList.add("hidden");
 }
 overlay.addEventListener("click",revealInvitation);
-window.setTimeout(revealInvitation,3000);
+window.setTimeout(revealInvitation,5000);
 })();
 
 /* ===== MODULE: LOADER ===== */
