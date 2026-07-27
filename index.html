@@ -12,7 +12,7 @@
 <meta property="og:type" content="website" />
 <meta property="og:title" content="Francisco &amp; Francisca — Nos Casamos" />
 <meta property="og:description" content="21 de Noviembre de 2026. Te invitamos a celebrar el inicio de nuestra nueva vida juntos." />
-<meta property="og:image" content="https://franciscorobledo.github.io/matrimonio-franes/og-franes.jpg" />
+<meta property="og:image" content="https://franciscorobledo.github.io/matrimonio-franes/carta_harry.png" />
 <meta property="og:image:width" content="1200" />
 <meta property="og:image:height" content="630" />
 <meta property="og:image:alt" content="Francisco y Francisca, invitación de matrimonio" />
@@ -108,11 +108,20 @@ pointer-events:none;
 }
 .opening-card img{
 width:100%;max-width:520px;margin:0 auto;
-border-radius:20px;object-fit:cover;
+border-radius:20px;object-fit:contain;
+background:transparent;
 box-shadow:0 35px 85px rgba(0,0,0,.38),0 0 24px rgba(255,208,113,.16),inset 0 0 20px rgba(255,255,255,.08);
 transform:perspective(900px) rotate(-1.2deg) translateY(-6px);
 animation:openingFloat 2.8s ease-in-out infinite alternate;
 filter:contrast(1.04) saturate(1.02) sepia(.08);
+}
+.opening-caption{
+margin-top:1rem;
+font-family:var(--font-script);
+font-size:1.7rem;
+color:#f7e8be;
+text-shadow:0 2px 10px rgba(0,0,0,.35);
+letter-spacing:.02em;
 }
 @keyframes openingPop{from{transform:scale(.94);opacity:0;}to{transform:scale(1);opacity:1;}}
 @keyframes openingFloat{from{transform:perspective(900px) rotate(-1.2deg) translateY(-6px);}to{transform:perspective(900px) rotate(1.3deg) translateY(4px);}}
@@ -417,6 +426,7 @@ body{background:radial-gradient(ellipse at 18% 4%,rgba(255,255,255,.88),transpar
 <div id="openingOverlay" class="opening-overlay" role="dialog" aria-label="Abrir invitación">
   <div class="opening-card">
     <img src="carta_harry.png" alt="Carta de invitación" />
+    <div class="opening-caption">Te invitamos a nuestro matrimonio</div>
   </div>
 </div>
 
