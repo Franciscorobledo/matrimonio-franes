@@ -80,7 +80,26 @@ img{max-width:100%;display:block;}
 a{color:inherit;} 
 @keyframes drift{from{transform:translate3d(-3%, -2%, 0) scale(1);}to{transform:translate3d(4%, 3%, 0) scale(1.08);}}
 
-/* ===== 2. LOADER ===== */
+/* ===== 2. OPENING OVERLAY ===== */
+.opening-overlay{
+position:fixed;inset:0;z-index:10000;
+display:flex;align-items:center;justify-content:center;padding:1.5rem;
+background:linear-gradient(135deg, rgba(91,48,64,.97), rgba(37,20,28,.96));
+transition:opacity .7s ease,visibility .7s ease;
+}
+.opening-overlay.hidden{opacity:0;visibility:hidden;pointer-events:none;}
+.opening-card{
+width:min(92vw,420px);padding:1.6rem 1.2rem;border-radius:24px;
+background:transparent;box-shadow:none;
+text-align:center;animation:openingPop .6s ease both;
+}
+.opening-card img{width:100%;max-width:320px;margin:0 auto 1rem;border-radius:16px;object-fit:cover;}
+.opening-title{font-family:var(--font-script);font-size:2rem;color:var(--burgundy);margin-bottom:.5rem;}
+.opening-text{font-family:var(--font-serif);font-size:1rem;color:var(--text-soft);line-height:1.7;}
+.opening-hint{font-family:var(--font-label);font-size:.7rem;letter-spacing:.28em;text-transform:uppercase;color:var(--gold-deep);margin-top:.8rem;}
+@keyframes openingPop{from{transform:scale(.96);opacity:0;}to{transform:scale(1);opacity:1;}}
+
+/* ===== 3. LOADER ===== */
 #loader{
 position:fixed;inset:0;z-index:9999;
 background:var(--burgundy);
@@ -376,6 +395,15 @@ body{background:radial-gradient(ellipse at 18% 4%,rgba(255,255,255,.88),transpar
 </head>
 <body>
 
+<div id="openingOverlay" class="opening-overlay" role="dialog" aria-label="Abrir invitación">
+  <div class="opening-card">
+    <img src="carta_harry.png" alt="Carta de invitación" />
+    <h2 class="opening-title">Haz clic</h2>
+    <p class="opening-text">La invitación se abrirá automáticamente en 3 segundos.</p>
+    <p class="opening-hint">O toca la pantalla para entrar</p>
+  </div>
+</div>
+
 <div id="loader"><div class="loader-monogram">F &amp; F</div><div class="loader-ring"></div></div>
 <div id="petals"></div>
 <section class="hero" id="portada">
@@ -582,6 +610,20 @@ body{background:radial-gradient(ellipse at 18% 4%,rgba(255,255,255,.88),transpar
 <button id="backToTop" aria-label="Volver arriba"><svg viewBox="0 0 24 24"><path d="M12 19V5M5 12l7-7 7 7"/></svg></button>
 
 <script>
+/* ===== MODULE: OPENING OVERLAY ===== */
+(function(){
+var overlay=document.getElementById("openingOverlay");
+if(!overlay)return;
+var revealed=false;
+function revealInvitation(){
+if(revealed)return;
+revealed=true;
+overlay.classList.add("hidden");
+}
+overlay.addEventListener("click",revealInvitation);
+window.setTimeout(revealInvitation,3000);
+})();
+
 /* ===== MODULE: LOADER ===== */
 (function(){
 window.addEventListener("load",function(){
