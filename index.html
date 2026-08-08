@@ -480,6 +480,28 @@ body::after{background:radial-gradient(circle,rgba(156,213,207,.28) 0%,transpare
 .calendar-card{background:rgba(248,255,247,.66);border-color:rgba(126,173,131,.36);}
 .btn-calendar{border-color:var(--gold-deep);background:var(--burgundy);color:#f7fff5;}.btn-calendar:hover,.btn-calendar:focus-visible{background:var(--burgundy-deep);box-shadow:0 10px 22px rgba(53,100,72,.22);}
 .footer{background:radial-gradient(ellipse at 50% 4%,rgba(231,255,252,.48),transparent 36%),linear-gradient(155deg,#58aaa4,#286e6d 78%);color:#f2fdfc;box-shadow:inset 0 18px 50px rgba(16,68,67,.18);}.footer-monogram,.footer-names{color:#d9f5f1;}.footer-message{color:rgba(245,255,254,.84);}.footer-date{color:#bce8e2;}.footer-nav{border-color:rgba(203,241,236,.32);}.footer-nav a{color:rgba(245,255,254,.78);}.footer-nav a:hover{color:#d9f5f1;}.footer-credit{color:rgba(245,255,254,.54);}
+
+/* ===== 22. NUESTRA HISTORIA — CARRUSEL ===== */
+.story-carousel{position:relative;max-width:840px;margin:0 auto;}
+.story-track{display:flex;gap:1.1rem;overflow-x:auto;scroll-snap-type:x mandatory;-webkit-overflow-scrolling:touch;padding:.4rem 10vw 2rem;list-style:none;scrollbar-width:none;}
+.story-track::-webkit-scrollbar{display:none;}
+.story-slide{flex:0 0 76%;scroll-snap-align:center;text-align:center;}
+.story-figure{margin:0;}
+.story-figure-frame{position:relative;aspect-ratio:4/5;border-radius:18px;overflow:hidden;border:1px solid rgba(201,166,103,.5);box-shadow:0 22px 50px rgba(38,118,115,.16),inset 0 0 0 1px rgba(255,255,255,.3);background:linear-gradient(145deg,rgba(255,255,255,.5),rgba(228,247,244,.5));}
+.story-figure-frame::after{content:"";position:absolute;inset:8px;border:1px solid rgba(255,255,255,.55);border-radius:12px;pointer-events:none;}
+.story-figure-frame img{width:100%;height:100%;object-fit:cover;filter:saturate(1.03) contrast(1.02);transition:transform .8s var(--ease-luxe,ease);}
+.story-slide:hover .story-figure-frame img{transform:scale(1.045);}
+.story-figure figcaption{margin-top:1.1rem;font-family:var(--font-script);font-size:1.4rem;color:var(--burgundy);line-height:1.3;}
+.story-nav{position:absolute;top:calc(50% - 1rem);width:44px;height:44px;border-radius:50%;background:rgba(255,255,255,.82);border:1px solid rgba(201,166,103,.45);color:var(--burgundy-deep);display:flex;align-items:center;justify-content:center;cursor:pointer;box-shadow:0 10px 26px rgba(38,118,115,.18);transition:transform .3s,background .3s;z-index:2;}
+.story-nav:hover{background:var(--gold-pale);transform:translateY(-50%) scale(1.06);}
+.story-nav svg{width:18px;height:18px;stroke:currentColor;fill:none;stroke-width:1.8;}
+.story-prev{left:-6px;}
+.story-next{right:-6px;}
+.story-dots{display:flex;justify-content:center;gap:.55rem;margin-top:.4rem;}
+.story-dot{width:8px;height:8px;border-radius:50%;border:1px solid var(--gold-deep);background:transparent;padding:0;cursor:pointer;transition:background .3s,transform .3s;}
+.story-dot.active{background:var(--gold-deep);transform:scale(1.25);}
+@media (min-width:700px){.story-slide{flex:0 0 44%;}.story-track{padding-left:2vw;padding-right:2vw;}.story-nav{display:flex;}.story-prev{left:-22px;}.story-next{right:-22px;}}
+@media (max-width:699px){.story-nav{display:none;}}
 </style>
 </head>
 <body>
@@ -487,7 +509,7 @@ body::after{background:radial-gradient(circle,rgba(156,213,207,.28) 0%,transpare
 <div id="openingOverlay" class="opening-overlay" role="dialog" aria-label="Abrir invitación">
   <div class="opening-card">
     <img src="carta_harry.png" alt="Carta de invitación" />
-    <div class="opening-caption">Te invitamos a nuestro matrimonio</div>
+    <div class="opening-caption">Matrimonio Francisco Robledo & Francisca Giambastiani</div>
   </div>
 </div>
 
@@ -497,7 +519,7 @@ body::after{background:radial-gradient(circle,rgba(156,213,207,.28) 0%,transpare
 <svg class="hero-botanical top-left" viewBox="0 0 200 200" fill="none" stroke="currentColor" stroke-width="0.8"><path d="M100 180 Q95 140 80 110 Q60 70 30 50"/><path d="M100 180 Q105 140 120 110 Q140 70 170 50"/><ellipse cx="30" cy="50" rx="12" ry="18" transform="rotate(-30 30 50)"/><ellipse cx="170" cy="50" rx="12" ry="18" transform="rotate(30 170 50)"/></svg>
 <svg class="hero-botanical bottom-right" viewBox="0 0 200 200" fill="none" stroke="currentColor" stroke-width="0.8"><path d="M100 180 Q95 140 80 110 Q60 70 30 50"/><path d="M100 180 Q105 140 120 110 Q140 70 170 50"/><ellipse cx="30" cy="50" rx="12" ry="18" transform="rotate(-30 30 50)"/><ellipse cx="170" cy="50" rx="12" ry="18" transform="rotate(30 170 50)"/></svg>
 
-<h1 class="hero-title">Nos casamos</h1>
+<h1 class="hero-title">Matrimonio Religioso</h1>
 <div class="hero-photo-frame">
 <img src="pareja.png" alt="Francisco y Francisca" loading="eager" />
 </div>
@@ -565,6 +587,31 @@ body::after{background:radial-gradient(circle,rgba(156,213,207,.28) 0%,transpare
 </div>
 </div>
 </section>
+<section id="historia">
+<div class="section">
+<span class="section-label reveal">Nuestro camino</span>
+<h2 class="section-title reveal reveal-d1">Nuestra Historia</h2>
+<div class="section-line reveal reveal-d2"></div>
+
+<div class="story-carousel reveal reveal-d3">
+<button class="story-nav story-prev" id="storyPrev" aria-label="Foto anterior"><svg viewBox="0 0 24 24"><path d="M15 5 L8 12 L15 19"/></svg></button>
+<button class="story-nav story-next" id="storyNext" aria-label="Foto siguiente"><svg viewBox="0 0 24 24"><path d="M9 5 L16 12 L9 19"/></svg></button>
+<!-- PERSONALIZAR: cambia las frases debajo de cada foto por las que quieran contar -->
+<ul class="story-track" id="storyTrack">
+<li class="story-slide"><figure class="story-figure"><div class="story-figure-frame"><img src="historia/1.jpg" alt="Francisco y Francisca" loading="lazy" /></div><figcaption>Así comenzó todo</figcaption></figure></li>
+<li class="story-slide"><figure class="story-figure"><div class="story-figure-frame"><img src="historia/2.jpg" alt="Francisco y Francisca" loading="lazy" /></div><figcaption>Nuestras primeras aventuras</figcaption></figure></li>
+<li class="story-slide"><figure class="story-figure"><div class="story-figure-frame"><img src="historia/3.jpg" alt="Francisco y Francisca" loading="lazy" /></div><figcaption>Un beso frente al mar</figcaption></figure></li>
+<li class="story-slide"><figure class="story-figure"><div class="story-figure-frame"><img src="historia/4.jpg" alt="Francisco y Francisca" loading="lazy" /></div><figcaption>Celebrando juntos</figcaption></figure></li>
+<li class="story-slide"><figure class="story-figure"><div class="story-figure-frame"><img src="historia/5.jpg" alt="Francisco y Francisca" loading="lazy" /></div><figcaption>El día que dijimos que sí</figcaption></figure></li>
+<li class="story-slide"><figure class="story-figure"><div class="story-figure-frame"><img src="historia/6.jpg" alt="Francisco y Francisca" loading="lazy" /></div><figcaption>El anillo que lo cambió todo</figcaption></figure></li>
+<li class="story-slide"><figure class="story-figure"><div class="story-figure-frame"><img src="historia/7.jpg" alt="Francisco y Francisca" loading="lazy" /></div><figcaption>Cada día más enamorados</figcaption></figure></li>
+<li class="story-slide"><figure class="story-figure"><div class="story-figure-frame"><img src="historia/8.jpg" alt="Francisco y Francisca" loading="lazy" /></div><figcaption>Construyendo nuestra historia</figcaption></figure></li>
+</ul>
+<div class="story-dots" id="storyDots"></div>
+</div>
+</div>
+</section>
+
 <section class="band-blush" id="dresscode">
 <div class="section">
 <span class="section-label reveal">Como vestir</span>
@@ -654,6 +701,7 @@ body::after{background:radial-gradient(circle,rgba(156,213,207,.28) 0%,transpare
 <nav class="footer-nav reveal reveal-d3">
 <a href="#portada">Inicio</a>
 <a href="#ceremonia">Ceremonia</a>
+<a href="#historia">Nuestra Historia</a>
 <a href="#confirmacion">Confirmar</a>
 </nav>
 <p class="footer-credit">Hecho con amor para nuestra boda</p>
@@ -750,6 +798,48 @@ f.style.animationDuration=(20+Math.random()*14)+"s, "+(2.5+Math.random()*2)+"s";
 f.style.animationDelay=(Math.random()*22)+"s, "+(Math.random()*2)+"s";
 container.appendChild(f);
 }
+})();
+
+/* ===== MODULE: STORY CAROUSEL ===== */
+(function(){
+var track=document.getElementById("storyTrack");
+if(!track)return;
+var slides=track.querySelectorAll(".story-slide");
+var dotsWrap=document.getElementById("storyDots");
+var prevBtn=document.getElementById("storyPrev");
+var nextBtn=document.getElementById("storyNext");
+slides.forEach(function(_,i){
+var d=document.createElement("button");
+d.className="story-dot";
+d.type="button";
+d.setAttribute("aria-label","Ir a foto "+(i+1));
+d.addEventListener("click",function(){
+slides[i].scrollIntoView({behavior:"smooth",inline:"center",block:"nearest"});
+});
+dotsWrap.appendChild(d);
+});
+var dots=dotsWrap.querySelectorAll(".story-dot");
+function updateActive(){
+var trackRect=track.getBoundingClientRect();
+var center=trackRect.left+trackRect.width/2;
+var closest=0,min=Infinity;
+slides.forEach(function(s,i){
+var r=s.getBoundingClientRect();
+var d=Math.abs((r.left+r.width/2)-center);
+if(d<min){min=d;closest=i;}
+});
+dots.forEach(function(d,i){d.classList.toggle("active",i===closest);});
+}
+var ticking=false;
+track.addEventListener("scroll",function(){
+if(!ticking){
+window.requestAnimationFrame(function(){updateActive();ticking=false;});
+ticking=true;
+}
+});
+if(prevBtn)prevBtn.addEventListener("click",function(){track.scrollBy({left:-track.clientWidth*0.82,behavior:"smooth"});});
+if(nextBtn)nextBtn.addEventListener("click",function(){track.scrollBy({left:track.clientWidth*0.82,behavior:"smooth"});});
+updateActive();
 })();
 
 /* ===== MODULE: BACK TO TOP ===== */
