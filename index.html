@@ -529,7 +529,7 @@ gap:.65rem;
 @keyframes letterFloatMagic{0%,100%{transform:translateY(0) rotate(-.5deg);}50%{transform:translateY(-9px) rotate(.6deg);}}
 @keyframes letterGlowMagic{0%,100%{filter:contrast(1.02) saturate(.98) drop-shadow(0 14px 28px rgba(201,166,103,.28));}50%{filter:contrast(1.04) saturate(1.05) drop-shadow(0 22px 46px rgba(255,221,140,.55));}}
 .opening-shimmer{position:absolute;inset:0;overflow:hidden;pointer-events:none;z-index:1;border-radius:inherit;}
-.opening-shimmer::after{content:"";position:absolute;top:0;left:-60%;width:38%;height:100%;background:linear-gradient(115deg,transparent,rgba(255,255,255,.6),transparent);transform:skewX(-18deg);animation:openingShimmerSweep 3.4s ease-in-out 2.4s infinite;}
+.opening-shimmer::after{display:none;}
 @keyframes openingShimmerSweep{0%{left:-60%;}45%{left:130%;}100%{left:130%;}}
 .opening-sparkles{position:absolute;inset:-12%;pointer-events:none;z-index:2;}
 .opening-sparkle{position:absolute;background:radial-gradient(circle,#fff8e0 0%,#f0cf7f 55%,transparent 75%);clip-path:polygon(50% 0%,61% 39%,100% 50%,61% 61%,50% 100%,39% 61%,0% 50%,39% 39%);opacity:0;animation-name:sparkleAppear,sparkleDrift;animation-timing-function:ease-in-out,ease-in-out;animation-iteration-count:infinite,infinite;}
@@ -661,7 +661,7 @@ gap:.65rem;
 <p class="info-card-type">Etiqueta</p>
 <h3 class="info-card-name">Formal Elegante</h3>
 <!-- PERSONALIZAR: ajusta segun las preferencias de la pareja -->
-<p class="dresscode-note">Preferimos evitar el color blanco, reservado para la novia.</p>
+<p class="dresscode-note">El color blanco está reservado para la novia.</p>
 </div>
 </div>
 </section>
